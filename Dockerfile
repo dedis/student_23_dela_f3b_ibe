@@ -1,8 +1,7 @@
 # Specifies a parent image
-FROM golang:1.20
+FROM golang:1.20-alpine
 
-RUN apt-get update
-RUN apt-get install -y tmux xxd
+RUN apk add cmd:bash cmd:tmux cmd:xxd
  
 # Creates an app directory to hold your app’s source code
 WORKDIR /app
