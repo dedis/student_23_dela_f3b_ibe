@@ -2,7 +2,7 @@
 FROM golang:1.20
 
 RUN apt-get update
-RUN apt-get install -y tmux
+RUN apt-get install -y tmux xxd
  
 # Creates an app directory to hold your app’s source code
 WORKDIR /app
@@ -11,4 +11,4 @@ WORKDIR /app
 COPY ./ /app/
  
 # Installs Go dependencies
-RUN go mod download
+RUN go install ./dkg/pedersen/dkgcli

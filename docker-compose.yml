@@ -1,8 +1,8 @@
 services:
-  dev:
+  demo:
     build: .
     volumes: 
       - ./:/app
     stdin_open: true # docker run -i
     tty: true        # docker run -t
-    command: tmux new-session ./run.sh
+    command: tmux new-session ./demo.sh
