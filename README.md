@@ -1,19 +1,12 @@
-# DEDIS Ledger Architecture
+# DELA F3B-IBE
 
-This framework aims to deliver a modular approach to a public ledger implementation. This project is under heavy development at this stage. Don't consider using it for the moment.
+Software repository delivered as part of the "Optimizing Frontrunning Protection" research project at @dedis.
 
-[![Go lint](https://github.com/dedis/dela/workflows/Go%20lint/badge.svg)](https://github.com/dedis/dela/actions?query=workflow%3A%22Go+lint%22)
-[![Go test](https://github.com/dedis/dela/workflows/Go%20test/badge.svg)](https://github.com/dedis/dela/actions?query=workflow%3A%22Go+test%22)
-[![Coverage Status](https://coveralls.io/repos/github/dedis/dela/badge.svg?branch=master)](https://coveralls.io/github/dedis/dela?branch=master)
-[![Go Report Card](https://goreportcard.com/badge/github.com/dedis/dela)](https://goreportcard.com/report/github.com/dedis/dela)
+The main point of interest is [dkg/pedersen_bn256](./dkg/pedersen_bn256).
 
-Browse the doc at
-[https://dedis.github.io/dela/](https://dedis.github.io/dela/), or
-directly in [/docs](/docs)
+A simple demo simulating a frontrunning protected decentralized exchange is available.
+Simply run `docker compose run demo` from the top-level of the repository.
+Alternatively, `./demo.sh` can be run directly inside [tmux],
+with the dependencies being Vim 9.0 (for `xxd`) and Go.
 
----
-
-<img width="200px" src="docs/unicore_logo.png"/>
-
-This project has received funding from the European Union's Horizon 2020 
-research and innovation programme under grant agreement No 825377.
+[tmux]: https://tmux.github.io
