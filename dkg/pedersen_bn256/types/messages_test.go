@@ -245,7 +245,7 @@ func TestSignRequest_Serialize(t *testing.T) {
 	require.Equal(t, fake.GetFakeFormatValue(), data)
 
 	_, err = req.Serialize(fake.NewBadContext())
-	require.EqualError(t, err, fake.Err("couldn't encode decrypt request"))
+	require.EqualError(t, err, fake.Err("couldn't encode sign request"))
 }
 
 func TestMessageFactory(t *testing.T) {
