@@ -5,7 +5,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 	"go.dedis.ch/dela/cli/node"
-	"go.dedis.ch/dela/dkg/pedersen"
+	"go.dedis.ch/dela/dkg/pedersen_bn256"
 	"go.dedis.ch/dela/internal/testing/fake"
 	"go.dedis.ch/dela/mino"
 	"golang.org/x/xerrors"

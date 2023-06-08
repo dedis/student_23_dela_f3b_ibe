@@ -8,7 +8,7 @@ import (
 	"go.dedis.ch/dela/cli/node"
 
 	db "go.dedis.ch/dela/core/store/kv/controller"
-	dkg "go.dedis.ch/dela/dkg/pedersen/controller"
+	dkg "go.dedis.ch/dela/dkg/pedersen_bn256/controller"
 	mino "go.dedis.ch/dela/mino/minogrpc/controller"
 )
 

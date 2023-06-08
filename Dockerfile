@@ -10,4 +10,4 @@ WORKDIR /app
 COPY ./ /app/
  
 # Installs Go dependencies
-RUN go install ./dkg/pedersen/dkgcli
+RUN go install ./dkg/pedersen_bn256/dkgcli

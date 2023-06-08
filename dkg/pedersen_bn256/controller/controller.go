@@ -4,7 +4,7 @@ import (
 	"go.dedis.ch/dela"
 	"go.dedis.ch/dela/cli"
 	"go.dedis.ch/dela/cli/node"
-	"go.dedis.ch/dela/dkg/pedersen"
+	"go.dedis.ch/dela/dkg/pedersen_bn256"
 	"go.dedis.ch/dela/mino"
 	"golang.org/x/xerrors"
 )

@@ -8,7 +8,7 @@ import (
 	"github.com/dedis/debugtools/channel"
 	"github.com/rs/zerolog"
 	"go.dedis.ch/dela"
-	"go.dedis.ch/dela/dkg/pedersen/types"
+	"go.dedis.ch/dela/dkg/pedersen_bn256/types"
 	"go.dedis.ch/dela/mino"
 	"go.dedis.ch/dela/serde"
 	"go.dedis.ch/kyber/v3"

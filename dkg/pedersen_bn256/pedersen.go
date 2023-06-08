@@ -10,7 +10,7 @@ import (
 	"go.dedis.ch/dela/dkg"
 
 	"go.dedis.ch/dela/crypto"
-	"go.dedis.ch/dela/dkg/pedersen/types"
+	"go.dedis.ch/dela/dkg/pedersen_bn256/types"
 	"go.dedis.ch/dela/internal/tracing"
 	"go.dedis.ch/dela/mino"
 	"go.dedis.ch/dela/serde"
