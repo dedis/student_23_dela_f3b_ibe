@@ -4,7 +4,7 @@ import os
 import sys
 
 destination = "../resources/"
-show = True
+show = False
 
 os.environ["LC_ALL"] = "en_US.UTF-8"
 os.environ["LANG"] = "en_US.UTF-8"

@@ -20,7 +20,7 @@ dfList2 = []
 for i in range(m):
     thisDf = df.loc[df[0] == 2**(3+i)]
     # convert ms to s
-    thisDf = thisDf.mean(axis=0) / 1000
+    thisDf = thisDf.mean(axis=0)
     dfList.append(thisDf)
 
 for i in range(m):
