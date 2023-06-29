@@ -243,6 +243,11 @@ func (a *Actor) Sign(msg []byte) ([]byte, float64, float64, error) {
 				"%T but got: %T", signReply, message)
 		}
 
+		err = tbls.Verify(pairingSuite, pubPoly, msg, signReply.Share)
+		if err != nil {
+			return []byte{}, 0, 0, err
+		}
+
 		sigShares[i] = signReply.Share
 	}
 
@@ -254,7 +259,6 @@ func (a *Actor) Sign(msg []byte) ([]byte, float64, float64, error) {
 		return []byte{}, 0, 0, xerrors.Errorf("failed to recover signature: %v", err)
 	}
 
-	
 	decryptionTime := time.Since(start).Seconds()
 
 	return signature, receivingSharesTime, decryptionTime, nil
