@@ -187,35 +187,6 @@ func (a *Actor) GetPublicKey() (kyber.Point, error) {
 	return a.startRes.getDistKey(), nil
 }
 
-func tbls_Recover(suite pairing.Suite, public *share.PubPoly, msg []byte, sigs [][]byte, t, n int) ([]byte, error) {
-	pubShares := make([]*share.PubShare, 0)
-	for _, sig := range sigs {
-		s := tbls.SigShare(sig)
-		i, err := s.Index()
-		if err != nil {
-			return nil, err
-		}
-		// no verification
-		point := suite.G1().Point()
-		if err := point.UnmarshalBinary(s.Value()); err != nil {
-			return nil, err
-		}
-		pubShares = append(pubShares, &share.PubShare{I: i, V: point})
-		if len(pubShares) >= t {
-			break
-		}
-	}
-	commit, err := share.RecoverCommit(suite.G1(), pubShares, t, n)
-	if err != nil {
-		return nil, err
-	}
-	sig, err := commit.MarshalBinary()
-	if err != nil {
-		return nil, err
-	}
-	return sig, nil
-}
-
 // Sign implements dkg.Actor. It gets the private shares of the nodes and
 // signs the message.
 func (a *Actor) Sign(msg []byte) ([]byte, float64, float64, error) {
@@ -278,7 +249,7 @@ func (a *Actor) Sign(msg []byte) ([]byte, float64, float64, error) {
 		receivingSharesTime := time.Since(start).Seconds()
 	start = time.Now()
 
-	signature, err := tbls_Recover(suite.(pairing.Suite), pubPoly, msg, sigShares, t, n)
+	signature, err := tbls.Recover(suite.(pairing.Suite), pubPoly, msg, sigShares, t, n)
 	if err != nil {
 		return []byte{}, 0, 0, xerrors.Errorf("failed to recover signature: %v", err)
 	}
